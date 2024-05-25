@@ -79,6 +79,11 @@ namespace BussinessObject.DataAccess
                 entity.Property(e => e.RequiredDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Member)
+                .WithMany(p => p.Orders)
+                .HasForeignKey(d => d.MemberId)
+                .HasConstraintName("FK_Order_MemberID__");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -90,6 +95,17 @@ namespace BussinessObject.DataAccess
                 entity.Property(e => e.OrderId).ValueGeneratedNever();
 
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
+
+                entity.HasOne(d => d.Order)
+              .WithMany(p => p.OrderDetail)
+              .HasForeignKey(d => d.OrderId)
+              .HasConstraintName("FK_Order_OrderID__");
+
+
+                entity.HasOne(d => d.Product)
+             .WithMany(p => p.OrderDetails)
+             .HasForeignKey(d => d.ProductId)
+             .HasConstraintName("FK_Order_ProductId__");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -107,6 +123,8 @@ namespace BussinessObject.DataAccess
                 entity.Property(e => e.Weight)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+
             });
 
             OnModelCreatingPartial(modelBuilder);

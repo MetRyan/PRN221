@@ -11,5 +11,8 @@ namespace BussinessObject.DataAccess
         public string Weight { get; set; } = null!;
         public decimal UnitPrice { get; set; }
         public int UnitsInstoke { get; set; }
+
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
     }
 }

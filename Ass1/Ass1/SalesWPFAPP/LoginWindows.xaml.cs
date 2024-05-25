@@ -23,7 +23,6 @@ namespace SalesWPFAPP
     {
        private readonly IMemberRepository _memberRepository;
 
-  
 
 
         public LoginWindows(IMemberRepository repository)
@@ -40,6 +39,15 @@ namespace SalesWPFAPP
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            bool isAdmin = _memberRepository.isAdmin(new() { Email = txtEmail.Text, Password = txtPassword.Text }); ;
+            if(isAdmin)
+            {
+                var main = new ProductManagement();
+                main.Show();
+                Close();
+            }
+            else { 
+
             var member = _memberRepository.verifyMember(new() { Email = txtEmail.Text, Password = txtPassword.Text });
             if (member != null)
             {
@@ -50,6 +58,7 @@ namespace SalesWPFAPP
             else
             {
                 //lbError.Content = "Wrong email or password";
+            }
             }
 
         }

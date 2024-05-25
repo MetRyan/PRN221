@@ -11,6 +11,7 @@ namespace DataAccess.Repository
     {
         IEnumerable <Member> getList();
         Member GetMemberbyEmail(String email);
+        bool isAdmin (Member member);
         Member verifyMember(Member member);
 
 

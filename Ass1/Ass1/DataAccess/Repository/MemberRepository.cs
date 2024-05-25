@@ -13,6 +13,9 @@ namespace DataAccess.Repository
 
         public Member GetMemberbyEmail(String email) => MemberDao.Instance.GetByEmail(email);
 
+        public bool isAdmin(Member member)  => MemberDao.Instance.isAdmin(member);
+
+
         public Member verifyMember(Member member) => MemberDao.Instance.VerifyMember(member);
     }
 }

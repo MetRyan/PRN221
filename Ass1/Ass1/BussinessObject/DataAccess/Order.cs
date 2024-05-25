@@ -11,5 +11,10 @@ namespace BussinessObject.DataAccess
         public DateTime? RequiredDate { get; set; }
         public DateTime? ShippedDate { get; set; }
         public decimal? Freight { get; set; }
+
+        public virtual Member Member { get; set; }
+
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+
     }
 }

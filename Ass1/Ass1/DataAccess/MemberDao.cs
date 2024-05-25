@@ -1,4 +1,5 @@
 ﻿using BussinessObject.DataAccess;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,30 @@ namespace DataAccess
                     instance ??= new MemberDao();
                     return instance;
                 }
+            }
+        }
+
+       public  bool isAdmin(Member member) {
+
+
+            try {
+
+                var config = new ConfigurationBuilder()
+                   .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                   .AddJsonFile("appsettings.json").Build();
+
+                var defaultAdminAccount = config.GetSection("DefaultAdminAccount");
+
+                if (member.Email == defaultAdminAccount["Email"] && member.Password == defaultAdminAccount["Password"])
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex) {
+
+                throw new Exception(ex.Message);
             }
         }
 

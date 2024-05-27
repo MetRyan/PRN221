@@ -57,7 +57,7 @@ namespace FUMINUHOTELSYSTEM
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var customerWindow = _serviceProvider.GetRequiredService<CustomeWindows>();
+            var customerWindow = _serviceProvider.GetRequiredService<CustomerWindows>();
             customerWindow.Show();
             this.Close();
         }

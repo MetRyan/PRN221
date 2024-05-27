@@ -1,0 +1,36 @@
+﻿<Window x:Class="FUMINUHOTELSYSTEM.CustomerWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FUMINUHOTELSYSTEM"
+        mc:Ignorable="d"
+        Title="CustomerWindows" Height="450" Width="800">
+    <Grid>
+        <StackPanel Background="LightBlue" Width="750" Orientation="Vertical">
+            <Label Name="lblTitle" Foreground="Red" FontWeight="DemiBold" FontSize="35" Content="Profile" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10" Width="600">
+                <Label Name="lbCustomerFullName" Content="Customer Full Name" />
+                <TextBox Name="txtCustomerFullName" HorizontalAlignment="Left" Height="25" Width="600"
+              Text="{Binding Path=CustomerFullName, Mode=TwoWay}" />
+
+                <Label Name="lblCustomerBirthday" Content="Customer Birthday"/>
+                <TextBox Name="txtCustomerBirthday" HorizontalAlignment="Left" Height="25" Width="600"
+              Text="{Binding Path=CustomerBirthday, Mode=TwoWay}" />
+
+                <Label Name="lblTelephone" Content="Telephone"/>
+                <TextBox Name="txtTelephone" HorizontalAlignment="Left" Height="25" Width="600"
+              Text="{Binding Path=Telephone, Mode=TwoWay}" />
+
+                <Label Name="lblEmailAddress" Content="Email Address"/>
+                <TextBox Name="txtEmailAddress" HorizontalAlignment="Left" Height="25" Width="600"
+              Text="{Binding Path=EmailAddress, Mode=TwoWay}" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button x:Name="btnBookingHistory" Margin="10" Width="150" Content="Booking history &#x00BB;" Click="btnBookingHistory_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

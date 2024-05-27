@@ -85,6 +85,8 @@ public partial class App : Application
                 services.AddSingleton<LoginPage>();
                 services.AddSingleton<BookingDetailsWindows>();
                 services.AddSingleton<RoomWindows>();
+                services.AddSingleton<CustomerWindows>();
+
                 /*
                                 services.AddSingleton<CustomerWindow>();
                                 services.AddSingleton<RoomWindow>();

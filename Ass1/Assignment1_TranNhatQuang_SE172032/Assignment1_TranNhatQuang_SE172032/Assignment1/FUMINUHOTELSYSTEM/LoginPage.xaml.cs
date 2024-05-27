@@ -89,7 +89,7 @@ namespace FUMINUHOTELSYSTEM
                 if (user != null)
                 {
                     // login as customer
-                    var customerProfileWindow = new CustomeWindows(_unitOfWork,ServiceProvider,user);
+                    var customerProfileWindow = new CustomerWindows(_unitOfWork,ServiceProvider,user);
                     customerProfileWindow.Show();
                     this.Close();
                 }

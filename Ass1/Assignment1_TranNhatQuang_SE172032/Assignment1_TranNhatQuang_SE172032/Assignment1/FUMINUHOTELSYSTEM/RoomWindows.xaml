@@ -1,0 +1,78 @@
+﻿<Window x:Class="FUMINUHOTELSYSTEM.RoomWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FUMINUHOTELSYSTEM"
+        mc:Ignorable="d"
+        Title="RoomWindows" Height="492" Width="864">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="397*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,0,260" Grid.ColumnSpan="2">
+            <Label Name="lblTitle" Foreground="Red" FontWeight="DemiBold" FontSize="25" Content="Room Information"/>
+            <StackPanel Orientation="Horizontal">
+
+                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+                    <Label Name="lblRoomNumber" Content="RoomNumber" />
+                    <TextBox Name="txtRoomNumber" HorizontalAlignment="Left" Height="25" Width="225"
+              Text="{Binding Path=RoomNumber, Mode=TwoWay}"
+              DataContext="{Binding ElementName=lvRoomInformation, Path=SelectedItem}"
+              PreviewTextInput="NumberOnlyTextBox_PreviewTextInput"
+              DataObject.Pasting="NumberOnlyTextBox_Pasting" />
+
+                    <Label Name="lblRoomDetailDescription" Content="RoomDetailDescription"/>
+                    <TextBox Name="txtRoomDetailDescription" HorizontalAlignment="Left" Height="25" Width="225"
+              Text="{Binding Path=RoomDetailDescription, Mode=TwoWay}"  
+              DataContext="{Binding ElementName=lvRoomInformation, Path=SelectedItem}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2"  Orientation="Vertical" Margin="10">
+                    <Label Name="lblRoomMaxCapacity" Content="RoomMaxCapacity"/>
+                    <TextBox Name="txtRoomMaxCapacity" HorizontalAlignment="Left" Height="25" Width="225"
+              Text="{Binding Path=RoomMaxCapacity, Mode=TwoWay}"  
+              DataContext="{Binding ElementName=lvRoomInformation, Path=SelectedItem}" 
+              PreviewTextInput="NumberOnlyTextBox_PreviewTextInput"
+              DataObject.Pasting="NumberOnlyTextBox_Pasting" />
+
+                    <Label Name="lblRoomType" Content="RoomType"/>
+                    <TextBox Name="txtRoomType" HorizontalAlignment="Left" Height="25" Width="225"
+              Text="{Binding Path=RoomType.RoomTypeName, Mode=TwoWay}"  
+              DataContext="{Binding ElementName=lvRoomInformation, Path=SelectedItem}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Orientation="Vertical" Margin="10">
+                    <Label Name="lblRoomPricePerDay" Content="RoomPricePerDay"/>
+                    <TextBox  Name="txtRoomPricePerDay" HorizontalAlignment="Left" Height="25" Width="225"
+              Text="{Binding Path=RoomPricePerDay, Mode=TwoWay}"  
+              DataContext="{Binding ElementName=lvRoomInformation, Path=SelectedItem}"
+              PreviewTextInput="NumberOnlyTextBox_PreviewTextInput"
+              DataObject.Pasting="NumberOnlyTextBox_Pasting" />
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button x:Name="btnCustomer" Margin="10" Width="70" Content="&#x00AB; Customer" Click="btnCustomer_Click" />
+                <Button x:Name="btnInsert" Margin="10" Width="70" Content="Insert" Click="btnInsert_Click" />
+                <Button x:Name="btnUpdate" Margin="10" Width="70" Content="Update" Click="btnUpdate_Click"/>
+                <Button x:Name="btnDelete" Margin="10" Width="70" Content="Delete" Click="btnDelete_Click"/>
+                <Button x:Name="btnHome" Margin="10" Width="70" Content="Home &#x00BB;" Click="btnHome_Click" />
+            </StackPanel>
+        </StackPanel>
+        <ListView Name="lvRoomInformation" Margin="10,216,4,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Room Number" Width="100" DisplayMemberBinding="{Binding Path= RoomNumber}"/>
+                    <GridViewColumn Header="Room Description" Width="250" DisplayMemberBinding="{Binding Path= RoomDetailDescription}"/>
+                    <GridViewColumn Header="Room Max Capacity" Width="150" DisplayMemberBinding="{Binding Path= RoomMaxCapacity}"/>
+                    <GridViewColumn Header="Room Type" Width="150" DisplayMemberBinding="{Binding Path= RoomType.RoomTypeName}"/>
+                    <GridViewColumn Header="Room Price Per Day" Width="200" DisplayMemberBinding="{Binding Path= RoomPricePerDay}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

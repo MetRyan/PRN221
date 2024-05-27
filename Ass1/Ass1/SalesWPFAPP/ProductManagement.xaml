@@ -21,7 +21,7 @@
         <Label x:Name="txtWeight" Content="Weight" HorizontalAlignment="Left" Margin="98,67,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
         <Label x:Name="txtUnitPrice" Content="UnitPrice" HorizontalAlignment="Left" Margin="-184,111,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
         <Label x:Name="txtUnitInstoke" Content="UnitInstoke" HorizontalAlignment="Left" Margin="101,108,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
-        <TextBox x:Name="tbProductId" Margin="-98,0,514,93" TextWrapping="Wrap" Text = "{Binding Path=ProductId, Mode=OneWay}" DataContext = "{Binding ElementName=lvProduct, Path=SelectedItem}" VerticalAlignment="Bottom" TextChanged="tbProductId_TextChanged"/>
+        <TextBox x:Name="tbProductId" Margin="-98,0,514,88" TextWrapping="Wrap" Text = "{Binding Path=ProductId, Mode=OneWay}" DataContext = "{Binding ElementName=lvProduct, Path=SelectedItem}" VerticalAlignment="Bottom" TextChanged="tbProductId_TextChanged"/>
         <TextBox x:Name="tbCategoryId" HorizontalAlignment="Left" Margin="-98,83,0,0" TextWrapping="Wrap"  Text = "{Binding Path=CategoryId, Mode=OneWay}" DataContext = "{Binding ElementName=lvProduct, Path=SelectedItem}" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="tbUnitPrice" HorizontalAlignment="Left" Margin="-98,116,0,0" TextWrapping="Wrap"  Text = "{Binding Path=UnitPrice, Mode=OneWay}" DataContext = "{Binding ElementName=lvProduct, Path=SelectedItem}" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="tbProductName" HorizontalAlignment="Left" Margin="181,38,0,0" TextWrapping="Wrap"  Text = "{Binding Path=ProductName, Mode=OneWay}" DataContext = "{Binding ElementName=lvProduct, Path=SelectedItem}" VerticalAlignment="Top" Width="166"/>

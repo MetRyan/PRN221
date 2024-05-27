@@ -82,7 +82,8 @@ namespace SalesWPFAPP
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-
+            Product getProduct = getProductObject();
+          //  _productRepository.
         }
     }
 }

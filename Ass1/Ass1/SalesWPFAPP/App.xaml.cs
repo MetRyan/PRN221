@@ -31,7 +31,6 @@ namespace SalesWPFAPP
         {
             var loginWindows = serviceProvider.GetService<LoginWindows>();
             loginWindows!.ShowDialog();
-
             var ProductManagementWindows = serviceProvider.GetService<ProductManagement>();
             ProductManagementWindows!.ShowDialog();
         }

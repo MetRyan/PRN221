@@ -13,13 +13,14 @@
         <Label x:Name="txtWeight" Content="Weight" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,-0.006"/>
         <Label x:Name="txtUnitPrice" Content="UnitPrice" HorizontalAlignment="Left" Margin="81,173,0,0" VerticalAlignment="Top"/>
         <Label x:Name="UnitInstoke" Content="UnitInstoke" HorizontalAlignment="Left" Margin="81,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,2.182"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbProductId1" HorizontalAlignment="Left" Margin="218,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbUnitPrice" HorizontalAlignment="Left" Margin="218,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbWeight" HorizontalAlignment="Left" Margin="218,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbProductName1" HorizontalAlignment="Left" Margin="218,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbUnitInstoke" HorizontalAlignment="Left" Margin="218,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="218,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbCategoryID" HorizontalAlignment="Left" Margin="218,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSave" Content="Button" HorizontalAlignment="Left" Margin="158,298,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

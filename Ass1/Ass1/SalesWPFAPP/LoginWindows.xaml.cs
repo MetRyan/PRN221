@@ -23,6 +23,7 @@ namespace SalesWPFAPP
     {
        private readonly IMemberRepository _memberRepository;
 
+        public static IServiceProvider ServiceProvider { get; set; }
 
 
         public LoginWindows(IMemberRepository repository)
